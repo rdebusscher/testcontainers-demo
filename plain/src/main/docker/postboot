@@ -1,0 +1,4 @@
+create-jdbc-connection-pool --datasourceclassname com.mysql.jdbc.jdbc2.optional.MysqlDataSource --restype javax.sql.DataSource --property url="${ENV=MYSQL_CONN}" mysql-pool
+set resources.jdbc-connection-pool.mysql-pool.property.password=rubus resources.jdbc-connection-pool.mysql-pool.property.databaseName=rubus resources.jdbc-connection-pool.mysql-pool.property.user=rubus
+create-jdbc-resource --enabled=true --poolName=mysql-pool --target=domain jdbc/some-mysql
+create-resource-ref --enabled=true --target=server jdbc/some-mysql
