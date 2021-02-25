@@ -1,8 +1,9 @@
 package be.rubus.payara.testcontainers.microshed;
 
 import org.junit.jupiter.api.Test;
+import org.microshed.testing.jaxrs.RESTClient;
 import org.microshed.testing.jupiter.MicroShedTest;
-import org.microshed.testing.testcontainers.MicroProfileApplication;
+import org.microshed.testing.testcontainers.ApplicationContainer;
 import org.testcontainers.junit.jupiter.Container;
 
 import javax.inject.Inject;
@@ -13,9 +14,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DataResourceIT {
 
     @Container
-    public static MicroProfileApplication app = new MicroProfileApplication();
+    public static ApplicationContainer app = new ApplicationContainer();
 
-    @Inject
+    @RESTClient
     public static DataResource dataResource;
 
     @Test
