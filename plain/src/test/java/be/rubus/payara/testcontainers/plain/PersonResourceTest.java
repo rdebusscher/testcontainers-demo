@@ -41,7 +41,7 @@ public class PersonResourceTest {
     private static final Logger logger = LoggerFactory.getLogger(PersonResourceTest.class);
 
     @Container
-    private static MySQLContainer mysqlServer = new MySQLContainer()
+    private static MySQLContainer mysqlServer = new MySQLContainer("mysql:5.7.22")
             .withDatabaseName("rubus")
             .withUsername("rubus")
             .withPassword("rubus");

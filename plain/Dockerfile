@@ -1,4 +1,4 @@
-FROM payara/micro:5.193
+FROM payara/micro:5.2021.1
 ARG MYSQL_CONN
 ENV MYSQL_CONN=$MYSQL_CONN
 CMD ["--deploymentDir", "/opt/payara/deployments", "--postbootcommandfile", "/opt/payara/postboot", "--addLibs", "/opt/payara/mysql-connector-java-5.1.39.jar","--noCluster", "--contextRoot", "/"]
