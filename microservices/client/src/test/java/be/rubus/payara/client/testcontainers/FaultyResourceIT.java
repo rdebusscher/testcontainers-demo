@@ -2,11 +2,11 @@ package be.rubus.payara.client.testcontainers;
 
 import be.rubus.payara.testcontainers.client.IntegrationResource;
 import org.junit.jupiter.api.Test;
+import org.microshed.testing.jaxrs.RESTClient;
 import org.microshed.testing.jupiter.MicroShedTest;
-import org.microshed.testing.testcontainers.MicroProfileApplication;
+import org.microshed.testing.testcontainers.ApplicationContainer;
 import org.testcontainers.junit.jupiter.Container;
 
-import javax.inject.Inject;
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,9 +15,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FaultyResourceIT {
 
     @Container
-    public static MicroProfileApplication app = new MicroProfileApplication();
+    public static ApplicationContainer app = new ApplicationContainer();
 
-    @Inject
+    @RESTClient
     public static IntegrationResource integrationResource;
 
     @Test
